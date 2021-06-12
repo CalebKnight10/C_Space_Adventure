@@ -14,18 +14,18 @@ void greeting() {
 //Here Is where I believe my errors start.  I asked around (Erin, Aidan, Andrew, and Rian) and couldn't find a resolution.  
 //Erin thought maybe an empty array of char might solve it, Aidan explained how he used malloc() and Andrew didn't respond in time...
 void getName() {
-    char name[10] = " ";
+    char name[10] = {'\0'};
     printf("What's your name?");
     scanf("%s", name);
-	printf("Hi there, %s! My name is Eliza, I am an old friend of Alexa", name)
+	printf("Hi there, %s! My name is Eliza, I am an old friend of Alexa", name);
     printf("Let's go on a space adventure!\n");
 }
 
 //Finds out whether the user wants a random planet or nah... Calls function accordingly
 void getPlanet() {
-    char YesorNo[20] = " ";
-    printf("Would you like me to randomly choose a planet for you to explore? (Y or N)", &reply);
-    scanf("%s", YesorNo);
+    char YesorNo = '0';
+    printf("Would you like me to randomly choose a planet for you to explore? (Y or N)");
+    scanf("%s", &YesorNo);
     if(YesorNo == 'Y' | YesorNo == 'y') {
         randPlanet();
     }
@@ -47,7 +47,7 @@ void randPlanet() {
 //Takes user input to travel to a planet from our JSON file
 void userPlanet() {
     printf("Ok you choose one.\n Name a planet you would like to visit:");
-    char planet[20] = " ";
+    char planet[10] = {'\0'};
     scanf("%s", planet);
     printf("Great! Enjoy exploring %s !", planet);
 }
